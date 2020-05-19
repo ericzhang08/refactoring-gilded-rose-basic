@@ -18,4 +18,8 @@ public class Item {
     public String toString() {
         return this.name + ", " + this.sell_in + ", " + this.quality;
     }
+
+    boolean isAgedBrie() {
+        return name.equals("Aged Brie");
+    }
 }
