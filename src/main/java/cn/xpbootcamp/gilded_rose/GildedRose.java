@@ -12,7 +12,7 @@ class GildedRose {
             if (!item.isAgedBrie()
                     && !item.isBackstagePass()) {
                 if (item.quality > 0) {
-                    if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                    if (!item.isSulfuras()) {
                         item.quality = item.quality - 1;
                     }
                 }
@@ -36,7 +36,7 @@ class GildedRose {
                 }
             }
 
-            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            if (!item.isSulfuras()) {
                 item.sell_in = item.sell_in - 1;
             }
 
@@ -44,7 +44,7 @@ class GildedRose {
                 if (!item.isAgedBrie()) {
                     if (!item.isBackstagePass()) {
                         if (item.quality > 0) {
-                            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                            if (!item.isSulfuras()) {
                                 item.quality = item.quality - 1;
                             }
                         }
