@@ -22,4 +22,8 @@ public class Item {
     boolean isAgedBrie() {
         return name.equals("Aged Brie");
     }
+
+    boolean isBackstagePass() {
+        return name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
 }
