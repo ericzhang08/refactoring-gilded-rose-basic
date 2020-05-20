@@ -20,6 +20,8 @@ public class Item {
                 return new BackstagePass(sell_in, quality);
             case "Aged Brie":
                 return new AgedBrie(sell_in, quality);
+            case "Sulfuras, Hand of Ragnaros":
+                return new Sulfuras(sell_in, quality);
             default:
                 return new Item(name, sell_in, quality);
         }
