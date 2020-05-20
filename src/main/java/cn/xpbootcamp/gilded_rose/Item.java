@@ -67,4 +67,24 @@ public class Item {
             sell_in = sell_in - 1;
         }
     }
+
+    void updateWhenExpired() {
+        if (sell_in < 0) {
+            if (!isAgedBrie()) {
+                if (!isBackstagePass()) {
+                    if (quality > 0) {
+                        if (!isSulfuras()) {
+                            quality = quality - 1;
+                        }
+                    }
+                } else {
+                    quality = 0;
+                }
+            } else {
+                if (quality < 50) {
+                    quality = quality + 1;
+                }
+            }
+        }
+    }
 }
