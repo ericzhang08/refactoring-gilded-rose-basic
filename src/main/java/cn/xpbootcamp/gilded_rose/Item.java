@@ -8,13 +8,16 @@ public class Item {
 
     public int quality;
 
-    private Item(String name, int sell_in, int quality) {
+     Item(String name, int sell_in, int quality) {
         this.name = name;
         this.sell_in = sell_in;
         this.quality = quality;
     }
 
     public static Item createItem(String name, int sell_in, int quality) {
+        if (name.equals("Aged Brie")) {
+            return new AgedBrie(sell_in, quality);
+        }
         return new Item(name, sell_in, quality);
     }
 
@@ -45,9 +48,8 @@ public class Item {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
 
-    private void updateQualityWhenUnexpired() {
-        if (isAgedBrie()
-                || isBackstagePass()) {
+     void updateQualityWhenUnexpired() {
+        if (isBackstagePass()) {
             if (quality < 50) {
                 quality = quality + 1;
 
@@ -75,14 +77,14 @@ public class Item {
         }
     }
 
-    private void updateSellIn() {
+     void updateSellIn() {
         if (isSulfuras()) {
         } else {
             sell_in = sell_in - 1;
         }
     }
 
-    private void updateWhenExpired() {
+     void updateWhenExpired() {
         if (sell_in < 0) {
             if (!isAgedBrie()) {
                 if (!isBackstagePass()) {
