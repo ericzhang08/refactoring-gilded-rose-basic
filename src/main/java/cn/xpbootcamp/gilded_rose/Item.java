@@ -34,17 +34,5 @@ public class Item {
     }
 
     public void updateQuality() {
-        updateQualityWhenUnexpired();
-        updateSellIn();
-        updateWhenExpired();
-    }
-
-    void updateQualityWhenUnexpired() {
-    }
-
-    void updateSellIn() {
-    }
-
-    void updateWhenExpired() {
     }
 }

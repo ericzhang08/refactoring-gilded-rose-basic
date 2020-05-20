@@ -6,18 +6,22 @@ public class NormalItem extends Item {
     }
 
     @Override
+    public void updateQuality() {
+        updateQualityWhenUnexpired();
+        updateSellIn();
+        updateWhenExpired();
+    }
+
     void updateQualityWhenUnexpired() {
         if (quality > 0) {
             quality = quality - 1;
         }
     }
 
-    @Override
     void updateSellIn() {
         sell_in = sell_in - 1;
     }
 
-    @Override
     void updateWhenExpired() {
         if (sell_in < 0) {
             if (quality > 0) {

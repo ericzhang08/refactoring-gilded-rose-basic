@@ -6,13 +6,18 @@ public class AgedBrie extends Item {
     }
 
     @Override
+    public void updateQuality() {
+        updateQualityWhenUnexpired();
+        updateSellIn();
+        updateWhenExpired();
+    }
+
     void updateQualityWhenUnexpired() {
         if (quality < 50) {
             quality = quality + 1;
         }
     }
 
-    @Override
     void updateWhenExpired() {
         if (sell_in < 0) {
             if (quality < 50) {
@@ -22,7 +27,6 @@ public class AgedBrie extends Item {
         }
     }
 
-    @Override
     void updateSellIn() {
         sell_in = sell_in - 1;
     }

@@ -6,6 +6,12 @@ public class BackstagePass extends Item {
     }
 
     @Override
+    public void updateQuality() {
+        updateQualityWhenUnexpired();
+        updateSellIn();
+        updateWhenExpired();
+    }
+
     void updateQualityWhenUnexpired() {
         if (quality < 50) {
             quality = quality + 1;
@@ -25,14 +31,12 @@ public class BackstagePass extends Item {
 
     }
 
-    @Override
     void updateWhenExpired() {
         if (sell_in < 0) {
             quality = 0;
         }
     }
 
-    @Override
     void updateSellIn() {
         sell_in = sell_in - 1;
     }
