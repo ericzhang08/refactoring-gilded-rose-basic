@@ -67,9 +67,6 @@ public class Item {
     void updateWhenExpired() {
         if (sell_in < 0) {
             if (quality > 0) {
-                if (isSulfuras()) {
-                    return;
-                }
                 quality = quality - 1;
             }
         }
