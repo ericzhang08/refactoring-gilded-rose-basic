@@ -37,20 +37,7 @@ public class Item {
         updateQualityWhenUnexpired();
 
         updateSellIn();
-
         updateWhenExpired();
-    }
-
-    private boolean isAgedBrie() {
-        return name.equals("Aged Brie");
-    }
-
-    private boolean isBackstagePass() {
-        return name.equals("Backstage passes to a TAFKAL80ETC concert");
-    }
-
-    private boolean isSulfuras() {
-        return name.equals("Sulfuras, Hand of Ragnaros");
     }
 
     void updateQualityWhenUnexpired() {
