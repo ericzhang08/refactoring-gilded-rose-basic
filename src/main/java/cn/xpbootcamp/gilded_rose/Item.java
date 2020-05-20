@@ -43,7 +43,6 @@ public class Item {
     }
 
     void updateSellIn() {
-        sell_in = sell_in - 1;
     }
 
     void updateWhenExpired() {

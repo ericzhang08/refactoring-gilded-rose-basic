@@ -14,7 +14,7 @@ public class NormalItem extends Item {
 
     @Override
     void updateSellIn() {
-        super.updateSellIn();
+        sell_in = sell_in - 1;
     }
 
     @Override
@@ -25,4 +25,5 @@ public class NormalItem extends Item {
             }
         }
     }
+
 }

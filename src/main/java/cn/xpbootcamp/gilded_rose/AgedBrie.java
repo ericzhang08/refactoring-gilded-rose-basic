@@ -21,4 +21,9 @@ public class AgedBrie extends Item {
 
         }
     }
+
+    @Override
+    void updateSellIn() {
+        sell_in = sell_in - 1;
+    }
 }

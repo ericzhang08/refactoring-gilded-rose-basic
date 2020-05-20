@@ -31,4 +31,9 @@ public class BackstagePass extends Item {
             quality = 0;
         }
     }
+
+    @Override
+    void updateSellIn() {
+        sell_in = sell_in - 1;
+    }
 }
