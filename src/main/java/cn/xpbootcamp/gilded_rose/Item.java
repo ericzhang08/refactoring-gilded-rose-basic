@@ -56,12 +56,8 @@ public class Item {
     void updateQualityWhenUnexpired() {
 
         if (quality > 0) {
-            if (isSulfuras()) {
-            } else {
-                quality = quality - 1;
-            }
+            quality = quality - 1;
         }
-
     }
 
     void updateSellIn() {
