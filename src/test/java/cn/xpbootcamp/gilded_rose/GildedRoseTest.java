@@ -67,7 +67,7 @@ class GildedRoseTest {
     }
 
     private static Item createItem(String name, int sellIn, int quality) {
-        return new Item(name, sellIn, quality);
+        return  Item.createItem(name, sellIn, quality);
     }
 
     private static class TestFixture {
