@@ -1,6 +1,6 @@
 package cn.xpbootcamp.gilded_rose;
 
-public class Item {
+public abstract  class Item {
 
     public String name;
 
@@ -33,6 +33,5 @@ public class Item {
         return this.name + ", " + this.sell_in + ", " + this.quality;
     }
 
-    public void updateQuality() {
-    }
+    public abstract void updateQuality() ;
 }
