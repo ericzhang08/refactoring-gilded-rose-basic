@@ -9,4 +9,8 @@ public class Sulfuras extends Item {
     void updateQualityWhenUnexpired() {
 
     }
+
+    @Override
+    void updateSellIn() {
+    }
 }
