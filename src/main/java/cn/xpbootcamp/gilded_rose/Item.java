@@ -35,13 +35,11 @@ public class Item {
 
     public void updateQuality() {
         updateQualityWhenUnexpired();
-
         updateSellIn();
         updateWhenExpired();
     }
 
     void updateQualityWhenUnexpired() {
-
         if (quality > 0) {
             quality = quality - 1;
         }
