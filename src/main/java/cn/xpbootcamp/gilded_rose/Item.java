@@ -23,7 +23,7 @@ public class Item {
             case "Sulfuras, Hand of Ragnaros":
                 return new Sulfuras(sell_in, quality);
             default:
-                return new Item(name, sell_in, quality);
+                return new NormalItem(name, sell_in, quality);
         }
     }
 
@@ -40,9 +40,6 @@ public class Item {
     }
 
     void updateQualityWhenUnexpired() {
-        if (quality > 0) {
-            quality = quality - 1;
-        }
     }
 
     void updateSellIn() {
@@ -50,10 +47,5 @@ public class Item {
     }
 
     void updateWhenExpired() {
-        if (sell_in < 0) {
-            if (quality > 0) {
-                quality = quality - 1;
-            }
-        }
     }
 }
