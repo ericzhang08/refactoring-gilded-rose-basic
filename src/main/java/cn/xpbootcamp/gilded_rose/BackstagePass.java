@@ -1,8 +1,10 @@
 package cn.xpbootcamp.gilded_rose;
 
 public class BackstagePass extends Item {
+    public static final String BACKSTAGE_PASSES_NAME = "Backstage passes to a TAFKAL80ETC concert";
+
     BackstagePass(int sell_in, int quality) {
-        super("Backstage passes to a TAFKAL80ETC concert", sell_in, quality);
+        super(BACKSTAGE_PASSES_NAME, sell_in, quality);
     }
 
     @Override
@@ -26,9 +28,7 @@ public class BackstagePass extends Item {
                     quality = quality + 1;
                 }
             }
-
         }
-
     }
 
     void updateWhenExpired() {

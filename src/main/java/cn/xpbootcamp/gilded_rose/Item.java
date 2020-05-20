@@ -16,11 +16,11 @@ public class Item {
 
     public static Item createItem(String name, int sell_in, int quality) {
         switch (name) {
-            case "Backstage passes to a TAFKAL80ETC concert":
+            case BackstagePass.BACKSTAGE_PASSES_NAME:
                 return new BackstagePass(sell_in, quality);
-            case "Aged Brie":
+            case AgedBrie.AGED_BRIE_NAME:
                 return new AgedBrie(sell_in, quality);
-            case "Sulfuras, Hand of Ragnaros":
+            case Sulfuras.SULFURAS_NAME:
                 return new Sulfuras(sell_in, quality);
             default:
                 return new NormalItem(name, sell_in, quality);

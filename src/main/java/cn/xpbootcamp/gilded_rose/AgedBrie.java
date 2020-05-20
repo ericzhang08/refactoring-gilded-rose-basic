@@ -1,8 +1,10 @@
 package cn.xpbootcamp.gilded_rose;
 
 public class AgedBrie extends Item {
+    public static final String AGED_BRIE_NAME = "Aged Brie";
+
     AgedBrie(int sell_in, int quality) {
-        super("Aged Brie", sell_in, quality);
+        super(AGED_BRIE_NAME, sell_in, quality);
     }
 
     @Override
@@ -23,7 +25,6 @@ public class AgedBrie extends Item {
             if (quality < 50) {
                 quality = quality + 1;
             }
-
         }
     }
 
