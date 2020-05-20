@@ -60,4 +60,11 @@ public class Item {
             }
         }
     }
+
+    void updateSellIn() {
+        if (isSulfuras()) {
+        } else {
+            sell_in = sell_in - 1;
+        }
+    }
 }

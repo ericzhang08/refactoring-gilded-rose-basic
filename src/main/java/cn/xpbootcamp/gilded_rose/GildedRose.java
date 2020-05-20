@@ -11,9 +11,7 @@ class GildedRose {
         for (Item item : items) {
             item.updateQualityWhenUnexpired();
 
-            if (!item.isSulfuras()) {
-                item.sell_in = item.sell_in - 1;
-            }
+            item.updateSellIn();
 
             if (item.sell_in < 0) {
                 if (!item.isAgedBrie()) {
