@@ -15,10 +15,14 @@ public class Item {
     }
 
     public static Item createItem(String name, int sell_in, int quality) {
-        if (name.equals("Aged Brie")) {
-            return new AgedBrie(sell_in, quality);
-        }
-        return new Item(name, sell_in, quality);
+         switch (name){
+             case "Backstage passes to a TAFKAL80ETC concert":
+                 return new BackstagePass(sell_in, quality);
+             case "Aged Brie":
+                 return new AgedBrie(sell_in, quality);
+             default:
+                 return new Item(name, sell_in, quality);
+         }
     }
 
 
