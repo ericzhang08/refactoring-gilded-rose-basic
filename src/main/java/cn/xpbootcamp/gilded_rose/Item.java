@@ -27,19 +27,19 @@ public class Item {
         updateWhenExpired();
     }
 
-    boolean isAgedBrie() {
+    private boolean isAgedBrie() {
         return name.equals("Aged Brie");
     }
 
-    boolean isBackstagePass() {
+    private boolean isBackstagePass() {
         return name.equals("Backstage passes to a TAFKAL80ETC concert");
     }
 
-    boolean isSulfuras() {
+    private boolean isSulfuras() {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
 
-    void updateQualityWhenUnexpired() {
+    private void updateQualityWhenUnexpired() {
         if (isAgedBrie()
                 || isBackstagePass()) {
             if (quality < 50) {
@@ -69,14 +69,14 @@ public class Item {
         }
     }
 
-    void updateSellIn() {
+    private void updateSellIn() {
         if (isSulfuras()) {
         } else {
             sell_in = sell_in - 1;
         }
     }
 
-    void updateWhenExpired() {
+    private void updateWhenExpired() {
         if (sell_in < 0) {
             if (!isAgedBrie()) {
                 if (!isBackstagePass()) {
