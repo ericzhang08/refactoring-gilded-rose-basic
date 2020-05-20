@@ -30,4 +30,34 @@ public class Item {
     boolean isSulfuras() {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
+
+    void updateQualityWhenUnexpired() {
+        if (isAgedBrie()
+                || isBackstagePass()) {
+                    if (quality < 50) {
+                        quality = quality + 1;
+
+                        if (isBackstagePass()) {
+                            if (sell_in < 11) {
+                                if (quality < 50) {
+                                    quality = quality + 1;
+                                }
+                            }
+
+                            if (sell_in < 6) {
+                                if (quality < 50) {
+                                    quality = quality + 1;
+                                }
+                            }
+                        }
+                    }
+                } else {
+            if (quality > 0) {
+                if (isSulfuras()) {
+                } else {
+                    quality = quality - 1;
+                }
+            }
+        }
+    }
 }
