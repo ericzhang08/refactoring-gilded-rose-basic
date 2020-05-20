@@ -8,23 +8,22 @@ public class Item {
 
     public int quality;
 
-     Item(String name, int sell_in, int quality) {
+    Item(String name, int sell_in, int quality) {
         this.name = name;
         this.sell_in = sell_in;
         this.quality = quality;
     }
 
     public static Item createItem(String name, int sell_in, int quality) {
-         switch (name){
-             case "Backstage passes to a TAFKAL80ETC concert":
-                 return new BackstagePass(sell_in, quality);
-             case "Aged Brie":
-                 return new AgedBrie(sell_in, quality);
-             default:
-                 return new Item(name, sell_in, quality);
-         }
+        switch (name) {
+            case "Backstage passes to a TAFKAL80ETC concert":
+                return new BackstagePass(sell_in, quality);
+            case "Aged Brie":
+                return new AgedBrie(sell_in, quality);
+            default:
+                return new Item(name, sell_in, quality);
+        }
     }
-
 
 
     @Override
@@ -52,43 +51,25 @@ public class Item {
         return name.equals("Sulfuras, Hand of Ragnaros");
     }
 
-     void updateQualityWhenUnexpired() {
-        if (isBackstagePass()) {
-            if (quality < 50) {
-                quality = quality + 1;
+    void updateQualityWhenUnexpired() {
 
-                if (isBackstagePass()) {
-                    if (sell_in < 11) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-
-                    if (sell_in < 6) {
-                        if (quality < 50) {
-                            quality = quality + 1;
-                        }
-                    }
-                }
-            }
-        } else {
-            if (quality > 0) {
-                if (isSulfuras()) {
-                } else {
-                    quality = quality - 1;
-                }
+        if (quality > 0) {
+            if (isSulfuras()) {
+            } else {
+                quality = quality - 1;
             }
         }
+
     }
 
-     void updateSellIn() {
+    void updateSellIn() {
         if (isSulfuras()) {
         } else {
             sell_in = sell_in - 1;
         }
     }
 
-     void updateWhenExpired() {
+    void updateWhenExpired() {
         if (sell_in < 0) {
             if (!isAgedBrie()) {
                 if (!isBackstagePass()) {
