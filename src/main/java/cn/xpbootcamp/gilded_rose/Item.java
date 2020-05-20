@@ -66,22 +66,18 @@ public class Item {
 
     void updateWhenExpired() {
         if (sell_in < 0) {
-            if (isAgedBrie()) {
-                if (quality < 50) {
-                    quality = quality + 1;
-                }
+
+            if (isBackstagePass()) {
+                quality = 0;
             } else {
-                if (isBackstagePass()) {
-                    quality = 0;
-                } else {
-                    if (quality > 0) {
-                        if (isSulfuras()) {
-                            return;
-                        }
-                        quality = quality - 1;
+                if (quality > 0) {
+                    if (isSulfuras()) {
+                        return;
                     }
+                    quality = quality - 1;
                 }
             }
+
         }
     }
 }
