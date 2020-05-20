@@ -19,6 +19,14 @@ public class Item {
         return this.name + ", " + this.sell_in + ", " + this.quality;
     }
 
+    public void updateQuality() {
+        updateQualityWhenUnexpired();
+
+        updateSellIn();
+
+        updateWhenExpired();
+    }
+
     boolean isAgedBrie() {
         return name.equals("Aged Brie");
     }
@@ -34,24 +42,24 @@ public class Item {
     void updateQualityWhenUnexpired() {
         if (isAgedBrie()
                 || isBackstagePass()) {
-                    if (quality < 50) {
-                        quality = quality + 1;
+            if (quality < 50) {
+                quality = quality + 1;
 
-                        if (isBackstagePass()) {
-                            if (sell_in < 11) {
-                                if (quality < 50) {
-                                    quality = quality + 1;
-                                }
-                            }
-
-                            if (sell_in < 6) {
-                                if (quality < 50) {
-                                    quality = quality + 1;
-                                }
-                            }
+                if (isBackstagePass()) {
+                    if (sell_in < 11) {
+                        if (quality < 50) {
+                            quality = quality + 1;
                         }
                     }
-                } else {
+
+                    if (sell_in < 6) {
+                        if (quality < 50) {
+                            quality = quality + 1;
+                        }
+                    }
+                }
+            }
+        } else {
             if (quality > 0) {
                 if (isSulfuras()) {
                 } else {

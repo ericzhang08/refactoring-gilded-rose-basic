@@ -9,11 +9,7 @@ class GildedRose {
 
     public void update_quality() {
         for (Item item : items) {
-            item.updateQualityWhenUnexpired();
-
-            item.updateSellIn();
-
-            item.updateWhenExpired();
+            item.updateQuality();
         }
     }
 
